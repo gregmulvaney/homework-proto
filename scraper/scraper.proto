@@ -1,0 +1,20 @@
+syntax="proto3";
+
+option go_package="github.com/gregmulvaney/homework-proto/gen/scraper";
+
+package scraper.v1;
+
+message Media {
+  string type = 1;
+}
+
+
+
+message ScrapeMlFavoritesRequest {}
+message ScrapeMlFavoritesResponse {
+  bool success = 1;
+}
+
+service ScraperService {
+  rpc ScrapeMlFavorites (ScrapeMlFavoritesRequest) returns (ScrapeMlFavoritesResponse);
+}
